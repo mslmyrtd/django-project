@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact
+from .models import Contact,Teacher,Branch
 # Register your models here.
 
 
@@ -10,3 +10,12 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact, ContactAdmin)
+
+
+class TeacherAdmin(admin.ModelAdmin):
+    list_display=["first_name","email_teacher","branch"]
+    list_filter=("first_name",)
+    search_filter=("first_name__startswith",)
+    
+admin.site.register(Teacher, TeacherAdmin)
+admin.site.register(Branch)
