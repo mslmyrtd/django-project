@@ -4,8 +4,10 @@ from django.http import HttpResponse
 from .forms import ContactForm
 from .models import Teacher
 # Create your views here.
-
+import random
 def home(request):
+    items=list(Teacher.objects.all())
+    teachers=random.sample(items,2)
     form=ContactForm()
     if request.method=="POST":
         form=ContactForm(request.POST)
@@ -13,7 +15,8 @@ def home(request):
             form.save()
             return redirect("home")
     context={
-        "form":form
+        "form":form,
+        "teachers":teachers
     }
     return render(request,"home/index.html",context)
 def teacher(request):
