@@ -1,4 +1,6 @@
-
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     <!-- end header section -->
 
   </div>
@@ -17,7 +19,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="box">
               <div class="img-box">
-                <img class="" src="images/teacher-1.jpg" alt="Card image cap">
+                <img class="" src="{% static 'images/teacher-1.jpg' %}" alt="Card image cap">
               </div>
               <div class="detail-box">
                 <p>
@@ -31,7 +33,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="box">
               <div class="img-box">
-                <img class="" src="images/teacher-2.jpg" alt="Card image cap">
+                <img class="" src="{% static 'images/teacher-2.jpg' %}" alt="Card image cap">
               </div>
               <div class="detail-box">
                 <p>
@@ -45,7 +47,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="box">
               <div class="img-box">
-                <img class="" src="images/teacher-3.jpg" alt="Card image cap">
+                <img class="" src="{% static 'images/teacher-3.jpg' %}" alt="Card image cap">
               </div>
               <div class="detail-box">
                 <p>
@@ -59,7 +61,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="box">
               <div class="img-box">
-                <img class="" src="images/teacher-4.jpg" alt="Card image cap">
+                <img class="" src= "{% static 'images/teacher-4.jpg' %}" alt="Card image cap">
               </div>
               <div class="detail-box">
                 <p>
@@ -83,4 +85,4 @@
   <!-- teacher section -->
 
 
-  
+  {% endblock content %}
