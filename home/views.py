@@ -2,6 +2,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import ContactForm
+from .models import Teacher
 # Create your views here.
 
 def home(request):
@@ -16,7 +17,11 @@ def home(request):
     }
     return render(request,"home/index.html",context)
 def teacher(request):
-    return render(request,"home/teacher.html")
+    teachers= Teacher.objects.all()
+    context={
+        "teachers":teachers
+    }
+    return render(request,"home/teacher.html",context)
 def about(request):
     return render(request,"home/about.html")
 
